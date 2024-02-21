@@ -1,12 +1,14 @@
-
-import {client} from "@/lib/sanity";
+import {Card, CardContent} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import {client, urlFor} from "@/lib/sanity";
 import React from 'react';
 import Image from "next/image";
 import Link from 'next/link';
+import { simpleProductCard } from '@/lib/interface';
 
 async function getData(){
   const query = `
-  *[_type=='product'] | order(_createdAt desc){
+  *[_type=='product'] | order(_createdAt asc){
     name,
     price,
     category,  
@@ -20,10 +22,27 @@ async function getData(){
 
 
 async function Products() {
-  const data = await getData();
+  const data:simpleProductCard[] = await getData();
+  // console.log(data);
   return (
-    <div >
-      Products
+    <div className="grid grid-cols-1 md:grid-cols-4 mt-5 gap-16 pl-32 pr-8 pt-5">
+      {data.map((post:any , idx:any)=>(
+        <Card key={idx} className='border-none rounded-s-sm'>
+          <Image
+            src={urlFor(post.productImage).url()}
+            alt='Product Image'
+            width={300}
+            height={300}
+          />
+          <CardContent className='p-0'>
+            <div className='font-medium pt-3 pb-2 text-lg'>{post.name}</div>
+            <div className='font-semibold text-gray-500 '>{post.category}</div>
+            <div className='pt-2 font-semibold text-xl'>{post.price}</div>
+          </CardContent>
+        </Card>
+      ))
+      }
+      
     </div>
   )
 }

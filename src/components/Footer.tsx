@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 function Footer() {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-[22rem,1fr,1fr,1fr] gap-5 py-32'>
+    <div className='grid grid-cols-1 md:grid-cols-[22rem,1fr,1fr,1fr] gap-5 p-32'>
         <div>
             <Image
                 src={"/images/logo.png"}

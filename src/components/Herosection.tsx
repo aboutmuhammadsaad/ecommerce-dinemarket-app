@@ -6,7 +6,7 @@ import { ShoppingCart } from 'lucide-react';
 
 function Herosection() {
   return (
-    <div className='flex flex-col md:flex-row'>
+    <div className='flex flex-col md:flex-row px-32'>
       <div className='basis-1/2 pt-16'>
           <Button className='bg-blue-100 text-blue-600 font-bold text-base px-6'>Sale 70%</Button>
           <p className='py-10 font-bold text-6xl tracking-wider'>An Industrial Take on Streetwear</p>
@@ -53,6 +53,7 @@ function Herosection() {
           alt='image' 
           width={800} 
           height={800}
+          className='h-[700px]'
         />
       </div>      
     </div>
