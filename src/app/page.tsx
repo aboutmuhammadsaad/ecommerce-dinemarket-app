@@ -1,10 +1,13 @@
 import Herosection from "@/components/Herosection";
-import Image from "next/image";
+import PromotionSection from "@/components/PromotionSection";
+import ProductsSection from "@/components/ProductsSection";
 
 export default function Home() {
   return (
    <div className=" min-h-screen">
-    <Herosection/>
+    <Herosection />
+    <PromotionSection />
+    <ProductsSection/>
    </div>
   );
 }

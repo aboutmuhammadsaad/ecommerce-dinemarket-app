@@ -7,7 +7,7 @@ import { Search,ShoppingCart } from 'lucide-react';
 
 function Header() {
   return (
-    <div className='flex justify-between items-center gap-5 h-24 pt-2 px-32'>
+    <div className='w-4/5 mx-auto md:flex justify-between items-center gap-5 my-8'>
         <div>
             <Image
                 src={"/images/logo.png"}
@@ -16,7 +16,7 @@ function Header() {
                 height={180} 
             />     
         </div>
-        <div className="flex justify-between items-center gap-14">
+        <div className="flex flex-wrap justify-between items-center gap-x-14">
             {
                 APP_LINKS.map((link) =>(
                    <Link href={link.href} key={link.id}>
