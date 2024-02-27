@@ -1,3 +1,4 @@
+
 import {Card, CardContent} from '@/components/ui/card';
 import {client, urlFor} from "@/lib/sanity";
 import Image from "next/image";
@@ -6,11 +7,11 @@ import { simpleProductCard } from '@/lib/interface';
 
 async function getData(){
   const query = `
-  *[_type=='product'] | order(_createdAt asc){
+  *[_type=='product' && category=="Female"] | order(_createdAt asc){
     name,
     price,
-    category,
-    Typw,  
+    category,  
+    Type,
     "currentSlug":slug.current,
     productImage,
   }`;
@@ -20,12 +21,11 @@ async function getData(){
 }
 
 
-async function Products() {
-  const data:simpleProductCard[] = await getData();
-  // console.log(data);
+async function FemaleProductsPage() {
+    const data:simpleProductCard[] = await getData();
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 mt-5 gap-16 pl-32 pr-8 pt-5">
-      {data.map((post:any , idx:any)=>(
+        {data.map((post:any , idx:any)=>(
         <Card key={idx} className='border-none rounded-s-sm'>
           <Link href={`/product/${post.currentSlug}`}>
           <Image
@@ -48,4 +48,4 @@ async function Products() {
   )
 }
 
-export default Products
+export default FemaleProductsPage

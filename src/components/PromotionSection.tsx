@@ -14,10 +14,10 @@ function PromotionSection() {
       {/* main box */}
       <div className='flex flex-col md:flex-row justify-between gap-8'>
         {/* left card */}
-        <div className='flex flex-1 flex-col gap-4'>
+        <div className='w-full md:w-[45%] flex flex-col gap-4'>
           {/* left uppercard */}
-          <div className='py px-8 flex justify-between items-center tracking-wider bg-[#d6d6d8]'>
-            <div>
+          <div className='px-8 flex flex-col md:flex-row justify-between items-center tracking-wider bg-[#d6d6d8]'>
+            <div className='pt-8 md:pt-0'>
               <p className='font-bold text-[1.75rem] leading-9 '>GET UP TO <span className=' font-extrabold text-[2.25rem] leading-10'>60%</span></p>
               <p className='text-lg tracking-wide leading-6'>For the summer season</p>
             </div>
@@ -25,8 +25,9 @@ function PromotionSection() {
             <Image
               src={"/images/event1.png"}
               alt='image'
-              width={282}
-              height={218}
+              width={380}
+              height={150}
+              className='h-[190px] w-[200px] md:w-[380px]'
               />
             </div>
           </div>
@@ -37,38 +38,38 @@ function PromotionSection() {
             <Button className='font-bold leading-6 bg-[#474747] md:px-[2.5rem] py-[0.5rem] '>DINEWEEKENDSALE</Button>
           </div>
         </div>
-        <div className='flex flex-col gap-4 md:flex-row'>
-          <Card className='pt-6 bg-[#efe1c7]'>
+        <div className='w-full md:w-[55%] flex flex-col gap-4 md:flex-row'>
+          <Card className='w-full md:w-[50%] pt-6 bg-[#efe1c7] rounded-none'>
             <CardContent>
-              <p>Flex Sweatshirt</p>
-              <div className=' relative text-lg'>
-                <span className=' absolute top-[-7px]'>_______</span>
-                <p>$100.00 <span className='font-semibold pl-2'>$75.00</span></p>
+              <p className=' text-base'>Flex Sweatshirt</p>
+              <div className=' relative'>
+                <span className='text-[18px] absolute top-[-7px]'>_______</span>
+                <p className='text-[18px]'>$100.00 <span className='font-semibold pl-2'>$75.00</span></p>
               </div>
               
             </CardContent>
             <Image
               src={"/images/event2.png"}
               alt='image'
-              width={282}
-              height={368}
-              className='h-[368px]'
+              width={280}
+              height={308}
+              className='h-[300px] mx-auto'
             />
           </Card>
-          <Card className='pt-6 bg-[#d7d7d9]'>
+          <Card className='w-full md:w-[50%] pt-6 bg-[#d7d7d9] rounded-none '>
             <CardContent>
-              <p>Flex Push Button Bomber</p>
-              <div className=' relative text-lg'>
-                <span className=' absolute top-[-7px]'>_______</span>
-                <p>$255.00 <span className='font-semibold pl-2'>$190.00</span></p>
+              <p className=' text-base'>Flex Push Button Bomber</p>
+              <div className=' relative'>
+                <span className='text-[18px] absolute top-[-7px]'>_______</span>
+                <p className='text-[18px]'>$255.00 <span className='font-semibold pl-2'>$190.00</span></p>
               </div>
             </CardContent>
             <Image
             src={"/images/event3.png"}
             alt='image'
-            width={282}
-            height={368}
-            className='h-[368px]'
+            width={280}
+            height={250}
+            className='h-[300px] mx-auto'
             />
           </Card>
         </div>

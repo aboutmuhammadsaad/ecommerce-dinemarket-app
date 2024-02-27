@@ -9,7 +9,9 @@ export interface simpleProductCard{
 export interface simpleProduct{
     name: string;
     price: string;
-    category: string;  
+    Type: string;
+    productdetails:any;
+    productcare:any;
     currentSlug: string;
     productImage: any;
 }

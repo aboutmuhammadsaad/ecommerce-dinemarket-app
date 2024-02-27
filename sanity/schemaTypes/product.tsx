@@ -4,7 +4,7 @@ export default {
     title: 'Product',
     fields: [
       {
-        name: 'name',
+        name: 'name', 
         type: 'string',
         title: 'Name of the Product'
       },
@@ -22,6 +22,11 @@ export default {
         title: 'Category'
       },
       {
+        name: 'Type',
+        type: 'string',
+        title: 'Type'
+      },
+      {
         name: 'price',
         type: 'string',
         title: 'price'
@@ -36,20 +41,20 @@ export default {
         type: 'array',
         title: 'Product Details',
         of:[
-            {
-                type:'block',
-            },
-        ],
+          {
+            type:'block',
+          }
+        ]
       },
       {
         name: 'productcare',
         type: 'array',
         title: 'Product Care',
         of:[
-            {
-                type:'block',
-            },
-        ],
+          {
+            type:'block',
+          }
+        ]
       },
     ]
   }
