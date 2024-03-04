@@ -3,7 +3,7 @@ import React from 'react'
 function Footer1() {
   return (
     <div className=' mt-16 py-4 border-t border-black '>
-      <div className='w-4/5 mx-auto flex flex-col justify-between items-center md:flex-row gap-y-5 '>  
+      <div className='w-[85%] md:w-[80%] mx-auto flex flex-col justify-between items-center md:flex-row gap-y-5 '>  
         <div className='w-full font-light md:w-1/5'>
 
           <p>Copyright © 2024 Dine Market</p>

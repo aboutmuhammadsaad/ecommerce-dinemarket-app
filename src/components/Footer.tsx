@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 function Footer() {
   return (
-    <div className='w-4/5 mx-auto py-16 grid grid-cols-1 md:grid-cols-[22rem,1fr,1fr,1fr] gap-5'>
+    <div className='w-[85%] md:w-[80%] mx-auto pt-16 grid grid-cols-1 md:grid-cols-[12rem,1fr,1fr,1fr] lg:grid-cols-[22rem,1fr,1fr,1fr] gap-5'>
         <div>
             <Image
                 src={"/images/logo.png"}
@@ -12,7 +12,7 @@ function Footer() {
                 width={170}
                 height={170} 
             />
-            <p className='py-10 pe-16'>Small, artisan label that offers a thoughtfully curated collection of high quality everyday essentials made.</p>
+            <p className='text-justify py-10 md:pe-4 lg:pe-16'>Small, artisan label that offers a thoughtfully curated collection of high quality everyday essentials made.</p>
             <div className='flex items-center gap-5'>
                 <div className='flex justify-center items-center bg-slate-100  w-10 h-10 rounded'> 
                     <Linkedin size={23}/>

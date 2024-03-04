@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Footer1 from "@/components/Footer1";
+import Navbar from "@/components/Header1";
 
 const inter = Sora({ subsets: ["latin"] });
 
@@ -21,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}  `}>
         <div className="box-border">
-          <Header />
+          <Navbar />
           {children}
           <Footer />
         </div>

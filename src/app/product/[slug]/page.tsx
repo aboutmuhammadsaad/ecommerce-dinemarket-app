@@ -1,9 +1,11 @@
-
+import Link from "next/link";
+import SizeQuantityBox from "@/components/SizeQuantityBox";
 import {client, urlFor} from "@/lib/sanity";
 import Image from "next/image";
 import { simpleProduct } from "@/lib/interface";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart } from 'lucide-react';
+import { info } from "@/components/SizeQuantityBox";
 
 async function getData(slug:string){
   const query = `
@@ -72,7 +74,8 @@ async function Productpage({params}:{params: {slug: string}}) {
               <div className="font-semibold text-[1.3rem] opacity-30">{data.Type}</div>
             </div>
             {/* size */}
-            <div>
+            <SizeQuantityBox proslug={data.currentSlug}/>
+            {/* <div>
               <div className="font-bold text-[0.9rem] leading-4 tracking-wider">SELECT SIZE</div>
               <div className="flex gap-4 mt-4">
                 <Button className="rounded-full text-base border border-white bg-[#f1f1f1] text-black hover:border-black hover:bg-white">XS</Button>
@@ -89,12 +92,14 @@ async function Productpage({params}:{params: {slug: string}}) {
                 <div>1</div>
                 <Button className="rounded-full text-base border border-white bg-[#f1f1f1] text-black hover:border-black hover:bg-white">+</Button>
               </div>
-            </div>
+            </div> */}
             <div className="flex items-center gap-4">
+              <Link href={"/cart"}>
               <Button className="gap-2 rounded-none bg-black">
               <ShoppingCart className='h-5 font-bold'/>
                 Add to Cart
               </Button>
+              </Link>
               <div className="font-bold text-2xl leading-8 tracking-widest text-[#212121]">{data.price}</div>
             </div>
           </div>
