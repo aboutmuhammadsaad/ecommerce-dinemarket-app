@@ -1,9 +1,11 @@
 "use client"
-import React, { use } from 'react';
+import React from 'react';
+import { ShoppingCart } from 'lucide-react';
 import { Button } from './ui/button';
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
-export let info:{
+let info:{
   pslug:string,
   selectedSize: string,
   selectedcount:number
@@ -11,22 +13,19 @@ export let info:{
 export let arr:any=[];
 
 function SizeQuantityBox({proslug}) {
+  const [click, setClick] = useState(0);
   const [size, setSize] = useState('');
   const [count, setCount] = useState(1);
-  const objectgenrater = useCallback(()=>{
-    info={
-      pslug: proslug,
-      selectedSize: size,
-      selectedcount:count
-    }
-    if (!size){
-      arr.push(info)
-    }
-  },[size])  
   
+  info={
+    pslug: proslug.pslug,
+    selectedSize: size,
+    selectedcount:count
+  }
+   
   useEffect(()=>{
-    objectgenrater();
-  },[size , count])
+    arr.push(info);
+  },[click])
   
   function dncreaseCount() {
     if(count === 1){
@@ -37,6 +36,10 @@ function SizeQuantityBox({proslug}) {
 
   function increaseCount() {
     setCount(count + 1);
+  }
+  function handleClick(){
+    setClick(click+1);
+    toast.success('Successfully added to the Cart!');
   }
 
   return (
@@ -59,6 +62,14 @@ function SizeQuantityBox({proslug}) {
           <div>{count}</div>
           <Button className="rounded-full text-base border border-white bg-[#f1f1f1] text-black hover:border-black hover:bg-white" onClick={increaseCount}>+</Button>
         </div>
+      </div>
+      <div className="flex items-center gap-4">      
+        <Button className="gap-2 rounded-none bg-black" onClick={handleClick} >
+          <ShoppingCart className='h-5 font-bold'/>
+          Add to Cart
+        </Button>
+        <Toaster />         
+        <div className="font-bold text-2xl leading-8 tracking-widest text-[#212121]">{proslug.price}</div>
       </div>
     </div>
   )

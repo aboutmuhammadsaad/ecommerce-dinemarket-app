@@ -42,9 +42,8 @@ function PromotionSection() {
           <Card className='w-full md:w-[50%] pt-6 bg-[#efe1c7] rounded-none'>
             <CardContent>
               <p className=' text-base'>Flex Sweatshirt</p>
-              <div className=' relative'>
-                <span className='text-[18px] absolute top-[-7px]'>_______</span>
-                <p className='text-[18px]'>$100.00 <span className='font-semibold pl-2'>$75.00</span></p>
+              <div className='text-[18px]'>
+                <span className='line-through'>$100.00</span><span className='font-semibold pl-2'>$75.00</span>
               </div>
               
             </CardContent>
@@ -59,9 +58,8 @@ function PromotionSection() {
           <Card className='w-full md:w-[50%] pt-6 bg-[#d7d7d9] rounded-none '>
             <CardContent>
               <p className=' text-base'>Flex Push Button Bomber</p>
-              <div className=' relative'>
-                <span className='text-[18px] absolute top-[-7px]'>_______</span>
-                <p className='text-[18px]'>$255.00 <span className='font-semibold pl-2'>$190.00</span></p>
+              <div className='text-[18px]'>
+                <span className='line-through'>$255.00</span><span className='font-semibold pl-2'>$190.00</span>
               </div>
             </CardContent>
             <Image

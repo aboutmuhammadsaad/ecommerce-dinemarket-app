@@ -1,5 +1,5 @@
 
-import { Linkedin }  from 'lucide-react';
+import { Linkedin,Facebook,Twitter }  from 'lucide-react';
 import Image from 'next/image';
 
 function Footer() {
@@ -11,38 +11,40 @@ function Footer() {
                 alt='image'
                 width={170}
                 height={170} 
+                className='cursor-pointer'
             />
             <p className='text-justify py-10 md:pe-4 lg:pe-16'>Small, artisan label that offers a thoughtfully curated collection of high quality everyday essentials made.</p>
             <div className='flex items-center gap-5'>
-                <div className='flex justify-center items-center bg-slate-100  w-10 h-10 rounded'> 
-                    <Linkedin size={23}/>
+                <div className='flex justify-center items-center bg-slate-100  w-10 h-10 rounded cursor-pointer'> 
+                    {/* <Linkedin /> */}
+                    <Twitter size={23} />
                 </div>
-                <div className='flex justify-center items-center bg-slate-100  w-10 h-10 rounded'>
-                    <Linkedin size={23}/>
+                <div className='flex justify-center items-center bg-slate-100  w-10 h-10 rounded cursor-pointer'>
+                    <Facebook size={23}/>
                 </div>
-                <div className='flex justify-center items-center bg-slate-100  w-10 h-10 rounded'>
+                <div className='flex justify-center items-center bg-slate-100  w-10 h-10 rounded cursor-pointer'>
                     <Linkedin size={23} />    
                 </div>    
             </div> 
         </div>
         <div className=''>
-            <h2 className='font-bold pb-3 text-xl text-slate-900'>Company</h2>
-            <p className='leading-9 text-slate-700'>About</p>
-            <p className='leading-9 font-light'>Terms of Use</p>
-            <p className='leading-9 font-light '>Privacy Policy</p>
-            <p className='leading-9 font-light tracking-wider'>How it Works</p>
-            <p className='leading-9 font-light tracking-wider'>Contact Us</p>
+            <h2 className='font-bold pb-3 text-xl text-slate-900 cursor-pointer'>Company</h2>
+            <p className='leading-9 text-slate-700 cursor-pointer'>About</p>
+            <p className='leading-9 font-light cursor-pointer'>Terms of Use</p>
+            <p className='leading-9 font-light cursor-pointer'>Privacy Policy</p>
+            <p className='leading-9 font-light tracking-wider cursor-pointer'>How it Works</p>
+            <p className='leading-9 font-light tracking-wider cursor-pointer'>Contact Us</p>
         </div>
         <div className=''>
-            <h2 className='font-bold pb-3 text-xl'>Support</h2>
-            <p className='leading-9 font-light tracking-wider'>Support Carrer</p>
-            <p className='leading-9 font-light tracking-wider'>24h Service</p>
-            <p className='leading-9 font-light tracking-wider'>Quick Chat</p>
+            <h2 className='font-bold pb-3 text-xl cursor-pointer'>Support</h2>
+            <p className='leading-9 font-light tracking-wider cursor-pointer'>Support Carrer</p>
+            <p className='leading-9 font-light tracking-wider cursor-pointer'>24h Service</p>
+            <p className='leading-9 font-light tracking-wider cursor-pointer'>Quick Chat</p>
         </div>
         <div className=''>
-            <h2 className='font-bold pb-3 text-xl'>Contact</h2>
-            <p className='leading-9 font-light tracking-wider'>Whatsapp</p>
-            <p className='leading-9 font-light tracking-wider'>Support 24h</p>
+            <h2 className='font-bold pb-3 text-xl cursor-pointer'>Contact</h2>
+            <p className='leading-9 font-light tracking-wider cursor-pointer'>Whatsapp</p>
+            <p className='leading-9 font-light tracking-wider cursor-pointer'>Support 24h</p>
         </div>
     </div>
   )
