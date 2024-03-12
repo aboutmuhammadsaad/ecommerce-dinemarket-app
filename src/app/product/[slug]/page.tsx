@@ -73,7 +73,7 @@ async function Productpage({params}:{params: {slug: string}}) {
               <div className="font-semibold text-[1.3rem] opacity-30">{data.Type}</div>
             </div>
             {/* size */}
-            <SizeQuantityBox proslug={{pslug: data.currentSlug, price:data.price}}/>
+            <SizeQuantityBox proslug={{price:data.price}}/>
             {/* <div>
               <div className="font-bold text-[0.9rem] leading-4 tracking-wider">SELECT SIZE</div>
               <div className="flex gap-4 mt-4">

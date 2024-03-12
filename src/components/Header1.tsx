@@ -10,11 +10,11 @@ import {arr} from './SizeQuantityBox';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [productCount, setProductCount] = useState(0);
+  // const [productCount, setProductCount] = useState(0);
   // setProductCount(arr.length);
-  if (productCount < arr.length) {
-    setProductCount(arr.length)
-  }
+  // if (productCount < arr.length) {
+  //   setProductCount(arr.length)
+  // }
   return (
     <header className={`flex w-full items-center gap-5 my-6 bg-white dark:bg-dark`}>
       <div className="w-[85%] md:w-[80%] mx-auto">
@@ -60,7 +60,7 @@ const Navbar = () => {
                 <ul className="block lg:flex">
                   <Link href={"/cart"}>
                     <div className='md:hidden w-11 h-11 rounded-full bg-slate-100 flex justify-center items-center relative'>
-                      <div className='w-4 h-4 text-xs absolute rounded-full flex justify-center items-center bg-red-500 text-white right-1 top-1'>{productCount}</div>
+                      <div className='w-4 h-4 text-xs absolute rounded-full flex justify-center items-center bg-red-500 text-white right-1 top-1'>{arr.length}</div>
                       <ShoppingCart className='h-5 font-bold'/>
                     </div>
                   </Link>
@@ -84,7 +84,7 @@ const Navbar = () => {
               </div>
               <Link href={"/cart"}>
                 <div className='w-11 h-11 rounded-full bg-slate-100 flex justify-center items-center relative'>
-                  <div className='w-4 h-4 text-xs absolute rounded-full flex justify-center items-center bg-red-500 text-white right-1 top-1'>{productCount}</div>
+                  <div className='w-4 h-4 text-xs absolute rounded-full flex justify-center items-center bg-red-500 text-white right-1 top-1'>{arr.length}</div>
                   <ShoppingCart className='h-5 font-bold'/>
                 </div>
               </Link>

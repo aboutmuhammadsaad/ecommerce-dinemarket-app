@@ -3,37 +3,32 @@ import React, { useState } from 'react'
 import {arr} from './SizeQuantityBox';
 import { Card } from './ui/card';
 import Image from 'next/image';
-import datato from '@/app/product/[slug]/page'
+import {datato} from '@/app/product/[slug]/page'
 
 function NotEmptyCart() {
-  // console.log(arr);
-  console.log(datato)
+  // console.log(datato)
   return (
-    <div>
-      Not empty cart
-      <Card>
+    <div className='flex flex-col gap-6'>
+      {arr.map((obj:any , idx:any)=>(
+        <Card key={idx}>
           <div className='flex justify-between items-center gap-5'>
-            <div>
+            <div className='flex flex-col'>
               <Image
-              src={'/images/product-1.png'}
+              src={datato.productImage}
               alt='Image'
               width={150}
               height={200}
               className='h-[180px]'
               />
+              <div>{obj.selectedSize}</div>
+              <div>{obj.selectedcount}</div>
             </div>
             <div></div>
           </div>
-        </Card> 
-      {/* {arr.map((obj:any , idx:any)=>(
-        // <ul key={idx}>
-        //   <li>{obj.selectedSize}</li>
-        //   <li>{obj.pslug}</li>
-        //   <li>{obj.selectedcount}</li>
-        // </ul>
+        </Card>
                
       ))
-      } */}
+      }
     </div>
   )
 }

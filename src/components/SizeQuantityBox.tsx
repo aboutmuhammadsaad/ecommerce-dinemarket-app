@@ -6,26 +6,22 @@ import { useState, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
 let info:{
-  pslug:string,
   selectedSize: string,
   selectedcount:number
 };
 export let arr:any=[];
 
-function SizeQuantityBox({proslug}) {
+console.log(arr, "<---")
+
+function SizeQuantityBox({proslug}:any) {
   const [click, setClick] = useState(0);
   const [size, setSize] = useState('');
   const [count, setCount] = useState(1);
   
   info={
-    pslug: proslug.pslug,
     selectedSize: size,
     selectedcount:count
   }
-   
-  useEffect(()=>{
-    arr.push(info);
-  },[click])
   
   function dncreaseCount() {
     if(count === 1){
@@ -33,12 +29,12 @@ function SizeQuantityBox({proslug}) {
     }
     setCount(count - 1);
   }
-
   function increaseCount() {
     setCount(count + 1);
   }
   function handleClick(){
-    setClick(click+1);
+    // setClick(click+1);
+    arr.push(info);
     toast.success('Successfully added to the Cart!');
   }
 
