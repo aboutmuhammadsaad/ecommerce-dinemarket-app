@@ -4,8 +4,6 @@ import {client, urlFor} from "@/lib/sanity";
 import Image from "next/image";
 import { simpleProduct } from "@/lib/interface";
 
-export let datato:simpleProduct;
-
 async function getData(slug:string){
   const query = `
   *[_type=='product'&& slug.current=="${slug}"] {
@@ -18,8 +16,8 @@ async function getData(slug:string){
     productImage,
   }[0]`;
   
-  datato= await client.fetch(query);
-  return datato;
+  const data= await client.fetch(query);
+  return data;
 }
 
 async function Productpage({params}:{params: {slug: string}}) {
