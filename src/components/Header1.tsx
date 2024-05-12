@@ -1,15 +1,17 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState ,useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { APP_LINKS } from '@/utils/constants';
 import { Input } from "@/components/ui/input";
 import { Search,ShoppingCart } from 'lucide-react';
-import {arr} from './SizeQuantityBox';
+import {CreateArrayContext} from "./SizeQuantityBox"
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const arr=useContext(CreateArrayContext) 
+  
   // const [productCount, setProductCount] = useState(0);
   // setProductCount(arr.length);
   // if (productCount < arr.length) {

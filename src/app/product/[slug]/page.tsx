@@ -36,7 +36,7 @@ async function Productpage({params}:{params: {slug: string}}) {
                 width={150}
                 height={150}
               />
-              <Image
+              {/* <Image
                 src={"/images/product-2-1.png"}
                 alt='Product Image'
                 width={150}
@@ -53,7 +53,7 @@ async function Productpage({params}:{params: {slug: string}}) {
                 alt='Product Image'
                 width={150}
                 height={150}
-              />
+              /> */}
             </div>
             <div>
               <Image
@@ -71,34 +71,7 @@ async function Productpage({params}:{params: {slug: string}}) {
               <div className="font-semibold text-[1.3rem] opacity-30">{data.Type}</div>
             </div>
             {/* size */}
-            <SizeQuantityBox proslug={{price:data.price}}/>
-            {/* <div>
-              <div className="font-bold text-[0.9rem] leading-4 tracking-wider">SELECT SIZE</div>
-              <div className="flex gap-4 mt-4">
-                <Button className="rounded-full text-base border border-white bg-[#f1f1f1] text-black hover:border-black hover:bg-white">XS</Button>
-                <Button className="rounded-full text-base border border-white bg-[#f1f1f1] text-black hover:border-black hover:bg-white">S</Button>
-                <Button className="rounded-full text-base border border-white bg-[#f1f1f1] text-black hover:border-black hover:bg-white">M</Button>
-                <Button className="rounded-full text-base border border-white bg-[#f1f1f1] text-black hover:border-black hover:bg-white">L</Button>
-                <Button className="rounded-full text-base border border-white bg-[#f1f1f1] text-black hover:border-black hover:bg-white">XL</Button>
-              </div>
-            </div>  
-            <div className="flex items-center gap-4 ">
-              <div>Quantity:</div>
-              <div className="flex justify-center items-center gap-2">
-                <Button className="rounded-full text-base border border-white bg-[#f1f1f1] text-black hover:border-black hover:bg-white">-</Button>
-                <div>1</div>
-                <Button className="rounded-full text-base border border-white bg-[#f1f1f1] text-black hover:border-black hover:bg-white">+</Button>
-              </div>
-            </div> */}
-            {/* <div className="flex items-center gap-4">
-              <Link href={"/cart"}>
-              <Button className="gap-2 rounded-none bg-black">
-              <ShoppingCart className='h-5 font-bold'/>
-                Add to Cart
-              </Button>
-              </Link>
-              <div className="font-bold text-2xl leading-8 tracking-widest text-[#212121]">{data.price}</div>
-            </div> */}
+            <SizeQuantityBox proslug={{data:data}}/>
           </div>
         </div>        
         <div className="bg-white py-10">

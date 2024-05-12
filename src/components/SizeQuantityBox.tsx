@@ -2,22 +2,25 @@
 import React from 'react';
 import { ShoppingCart } from 'lucide-react';
 import { Button } from './ui/button';
-import { useState, useEffect } from 'react';
+import { useState, createContext } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+
 
 let info:{
   selectedSize: string,
   selectedcount:number
 };
-export let arr:any=[];
-
-console.log(arr, "<---")
+// export let arr:any=[];
+// {id:any; name:any; type:any; price:any; selectedSize:anyl selectedcount:any }
+// console.log(arr, "<---")
+export const CreateArrayContext=createContext([{}]);
 
 function SizeQuantityBox({proslug}:any) {
-  const [click, setClick] = useState(0);
+  const [arr, setarr] = useState([{}]);
   const [size, setSize] = useState('');
   const [count, setCount] = useState(1);
   
+  let nextid:number=0;
   info={
     selectedSize: size,
     selectedcount:count
@@ -34,8 +37,7 @@ function SizeQuantityBox({proslug}:any) {
   }
   function handleClick(){
     // setClick(click+1);
-    arr.push(info);
-    toast.success('Successfully added to the Cart!');
+     
   }
 
   return (
@@ -48,7 +50,7 @@ function SizeQuantityBox({proslug}:any) {
           <Button className="rounded-full text-base border border-white bg-[#f1f1f1] text-black hover:border-black hover:bg-white" onClick={()=>setSize('M')}>M</Button>
           <Button className="rounded-full text-base border border-white bg-[#f1f1f1] text-black hover:border-black hover:bg-white" onClick={()=>setSize('L')}>L</Button>
           <Button className="rounded-full text-base border border-white bg-[#f1f1f1] text-black hover:border-black hover:bg-white" onClick={()=>setSize('XL')}>XL</Button>
-          <div>{size}</div>
+          {/* <div>{size}</div> */}
         </div>
       </div>  
       <div className="flex items-center gap-4 ">
@@ -60,12 +62,23 @@ function SizeQuantityBox({proslug}:any) {
         </div>
       </div>
       <div className="flex items-center gap-4">      
-        <Button className="gap-2 rounded-none bg-black" onClick={handleClick} >
+        <Button className="gap-2 rounded-none bg-black" onClick={()=>{
+          arr.push({
+            id:nextid++,
+            name:proslug.data.name,
+            type:proslug.data.Type,
+            price:proslug.data.price,
+            selectedSize: size,
+            selectedcount:count
+          });
+          <CreateArrayContext.Provider value={arr}></CreateArrayContext.Provider>
+          toast.success(`${count} ${proslug.data.name} of ${size} added to the Cart!`);
+        }} >
           <ShoppingCart className='h-5 font-bold'/>
           Add to Cart
         </Button>
         <Toaster />         
-        <div className="font-bold text-2xl leading-8 tracking-widest text-[#212121]">{proslug.price}</div>
+        <div className="font-bold text-2xl leading-8 tracking-widest text-[#212121]">{proslug.data.price}</div>
       </div>
     </div>
   )
