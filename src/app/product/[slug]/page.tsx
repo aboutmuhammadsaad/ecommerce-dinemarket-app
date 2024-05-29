@@ -92,7 +92,7 @@ async function Productpage({params}:{params: {slug: string}}) {
               <div className="w-full md:w-1/3">
                 <p className="flex-1 font-bold tracking-wider text-[#666]">PRODUCT CARE</p>
               </div>
-              <div className="flex-1 font-light text-justify tracking-wider leading-[26px] text-[#212121]">
+              <div className="flex-1 font-light text-justify tracking-wider leading-[26px] text-[#212121] md:w-2/3">
                 <ul className="list-disc">
                   <li>Lorem ipsum dolor sit amet</li>
                 </ul>
@@ -100,7 +100,6 @@ async function Productpage({params}:{params: {slug: string}}) {
             </div>
           </div>
         </div>
-        <div></div>
         
       </div>
     </div>

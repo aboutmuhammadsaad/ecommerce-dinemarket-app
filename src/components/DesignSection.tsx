@@ -7,7 +7,7 @@ function DesignSection() {
   return (
     <div className=' relative md:py-32'>
         <div className='bg-[#fbfcff]'>
-            <div className='w-[85%] md:w-[80%] mx-auto py-16'>
+            <div className='w-[80%] mx-auto py-16'>
                 <div className='w-[80%] flex md:justify-end md:absolute md:top-[3%] md:right-[10%] '>
                     <p className='w-full font-bold text-[2.5rem] tracking-wide leading-[55px] text-[#212121] md:text-[2.75rem] md:w-[45%]'>Unique and Authentic Vintage Designer Jewellery</p>
                 </div>

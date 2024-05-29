@@ -4,11 +4,11 @@ import Image from 'next/image';
 
 function Footer() {
   return (
-    <div className='w-[85%] md:w-[80%] mx-auto pt-16 grid grid-cols-1 md:grid-cols-[12rem,1fr,1fr,1fr] lg:grid-cols-[22rem,1fr,1fr,1fr] gap-5'>
+    <div className='w-[80%] mx-auto pt-16 grid grid-cols-1 md:grid-cols-[12rem,1fr,1fr,1fr] lg:grid-cols-[22rem,1fr,1fr,1fr] gap-5'>
         <div>
             <Image
-                src={"/images/logo.png"}
-                alt='image'
+                src={"/images/Logo.png"}
+                alt='Logo'
                 width={170}
                 height={170} 
                 className='cursor-pointer'

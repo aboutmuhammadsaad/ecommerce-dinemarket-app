@@ -4,7 +4,7 @@ import { Card,CardContent } from './ui/card';
 
 function ProductsSection() {
   return (
-    <div className='w-[85%] md:w-[80%] mx-auto py-16'>
+    <div className='w-[80%] mx-auto py-16'>
       <div className='text-center flex flex-col gap-4 mb-8'>
         <p className='text-xs font-bold text-blue-700 tracking-widest'>PRODUCTS</p>
         <p className=' text-3xl font-bold tracking-wide'>Check What We Have</p>
