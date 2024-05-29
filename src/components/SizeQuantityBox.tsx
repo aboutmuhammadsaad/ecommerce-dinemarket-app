@@ -9,7 +9,7 @@ interface Product {
   data: {
     name: string;
     Type: string;
-    price: number;
+    price: string;
   };
 }
 
@@ -17,7 +17,7 @@ interface CartItem {
   id: number;
   name: string;
   type: string;
-  price: number;
+  price: string;
   selectedSize: string;
   selectedcount: number;
 }
