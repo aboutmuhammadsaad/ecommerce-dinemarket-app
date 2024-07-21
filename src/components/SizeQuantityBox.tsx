@@ -3,15 +3,14 @@ import React, { useState, createContext, useContext, Dispatch, SetStateAction } 
 import { ShoppingCart } from 'lucide-react';
 import { Button } from './ui/button';
 import toast, { Toaster } from 'react-hot-toast';
+import { ArrContext } from '@/utils/Arrcontext';
 
 // Define the types for the product and cart item
-interface Product {
-  data: {
-    name: string;
-    Type: string;
-    price: string;
-  };
-}
+// interface Product {
+//     prodName: string;
+//     prodType: string;
+//     prodPrice: string;
+// }
 
 interface CartItem {
   id: number;
@@ -20,28 +19,12 @@ interface CartItem {
   price: string;
   selectedSize: string;
   selectedcount: number;
+  productImage:any;
 }
 
-// Create a context for the cart array
-interface CartContextType {
-  arr: CartItem[];
-  setArr: Dispatch<SetStateAction<CartItem[]>>;
-}
 
-// Provide a default value that matches the CartContextType
-const defaultCartContext: CartContextType = {
-  arr: [],
-  setArr: () => {},
-};
-
-export const CreateArrayContext = createContext<CartContextType>(defaultCartContext);
-
-interface SizeQuantityBoxProps {
-  proslug: Product;
-}
-
-function SizeQuantityBox({ proslug }: SizeQuantityBoxProps) {
-  const { arr, setArr } = useContext(CreateArrayContext);
+const SizeQuantityBox= ({ propslug }: any): JSX.Element=> {
+  const { valuesArr, setValuesArr } = useContext(ArrContext);
   const [size, setSize] = useState<string>('');
   const [count, setCount] = useState<number>(1);
 
@@ -57,16 +40,17 @@ function SizeQuantityBox({ proslug }: SizeQuantityBoxProps) {
 
   function handleAddToCart() {
     const newItem: CartItem = {
-      id: arr.length,
-      name: proslug.data.name,
-      type: proslug.data.Type,
-      price: proslug.data.price,
+      id: valuesArr.length + 1,
+      name: propslug.prodName,
+      type: propslug.prodType,
+      price: propslug.prodPrice,
       selectedSize: size,
       selectedcount: count,
+      productImage:propslug.prodImage    
     };
 
-    setArr([...arr, newItem]);
-    toast.success(`${count} ${proslug.data.name} of size ${size} added to the Cart!`);
+    setValuesArr([...valuesArr, newItem]);
+    toast.success(`${count} ${propslug.prodName} of size ${size} added to the Cart!`);
   }
 
   return (
@@ -103,24 +87,11 @@ function SizeQuantityBox({ proslug }: SizeQuantityBoxProps) {
           Add to Cart
         </Button>
         <Toaster />
-        <div className="font-bold text-2xl leading-8 tracking-widest text-[#212121]">{proslug.data.price}</div>
+        <div className="font-bold text-2xl leading-8 tracking-widest text-[#212121]">{propslug.prodPrice}</div>
       </div>
     </div>
   );
 }
+export default SizeQuantityBox;
 
-interface AppProps {
-  proslug: Product;
-}
 
-function App({ proslug }: AppProps) {
-  const [arr, setArr] = useState<CartItem[]>([]);
-  
-  return (
-    <CreateArrayContext.Provider value={{ arr, setArr }}>
-      <SizeQuantityBox proslug={proslug} />
-    </CreateArrayContext.Provider>
-  );
-}
-
-export default App;

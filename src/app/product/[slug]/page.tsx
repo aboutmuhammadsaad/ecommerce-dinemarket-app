@@ -71,7 +71,7 @@ async function Productpage({params}:{params: {slug: string}}) {
               <div className="font-semibold text-[1.3rem] opacity-30">{data.Type}</div>
             </div>
             {/* size */}
-            <SizeQuantityBox proslug={{data:data}}/>
+            <SizeQuantityBox propslug={{prodName:data.name, prodType:data.Type, prodPrice: data.price, prodImage:data.productImage} }/>
           </div>
         </div>        
         <div className="bg-white py-10">

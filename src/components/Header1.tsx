@@ -6,11 +6,12 @@ import { Button } from "./ui/button";
 import { APP_LINKS } from '@/utils/constants';
 import { Input } from "@/components/ui/input";
 import { Search,ShoppingCart } from 'lucide-react';
-import {CreateArrayContext} from "./SizeQuantityBox"
+import { ArrContext } from '@/utils/Arrcontext';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const arr=useContext(CreateArrayContext) 
+  const {valuesArr}=useContext(ArrContext);
+  // const arr=useContext(CreateArrayContext) 
   
   // const [productCount, setProductCount] = useState(0);
   // setProductCount(arr.length);
@@ -62,7 +63,7 @@ const Navbar = () => {
                 <ul className="block lg:flex">
                   <Link href={"/cart"}>
                     <div className='md:hidden w-11 h-11 rounded-full bg-slate-100 flex justify-center items-center relative'>
-                      <div className='w-4 h-4 text-xs absolute rounded-full flex justify-center items-center bg-red-500 text-white right-1 top-1'>{arr.arr.length}</div>
+                      <div className='w-4 h-4 text-xs absolute rounded-full flex justify-center items-center bg-red-500 text-white right-1 top-1'>{valuesArr.length}</div>
                       <ShoppingCart className='h-5 font-bold'/>
                     </div>
                   </Link>
@@ -86,7 +87,7 @@ const Navbar = () => {
               </div>
               <Link href={"/cart"}>
                 <div className='w-11 h-11 rounded-full bg-slate-100 flex justify-center items-center relative'>
-                  <div className='w-4 h-4 text-xs absolute rounded-full flex justify-center items-center bg-red-500 text-white right-1 top-1'>{arr.arr.length}</div>
+                  <div className='w-4 h-4 text-xs absolute rounded-full flex justify-center items-center bg-red-500 text-white right-1 top-1'>{valuesArr.length}</div>
                   <ShoppingCart className='h-5 font-bold'/>
                 </div>
               </Link>

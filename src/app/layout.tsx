@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Footer1 from "@/components/Footer1";
 import Navbar from "@/components/Header1";
+import { ArrProvider } from "@/utils/Arrcontext";
+// import SizeQuantityBox from "@/components/SizeQuantityBox";
 
 const inter = Sora({ subsets: ["latin"] });
 
@@ -18,15 +20,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const valuesArr=[];  
   return (
     <html lang="en">
       <body className={`${inter.className}  `}>
+        <ArrProvider>
         <div className="box-border">
           <Navbar />
           {children}
           <Footer />
         </div>
         <Footer1 />
+        </ArrProvider>
       </body>
     </html>
   );
