@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import Footer1 from "@/components/Footer1";
 import Navbar from "@/components/Header1";
 import { ArrProvider } from "@/utils/Arrcontext";
-// import SizeQuantityBox from "@/components/SizeQuantityBox";
+import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Sora({ subsets: ["latin"] });
 
@@ -24,14 +24,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}  `}>
-        <ArrProvider>
-        <div className="box-border">
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
-        <Footer1 />
-        </ArrProvider>
+        <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+          <ArrProvider>
+          <div className="box-border">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
+          <Footer1 />
+          </ArrProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

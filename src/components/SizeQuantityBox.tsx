@@ -13,7 +13,6 @@ import { ArrContext } from '@/utils/Arrcontext';
 // }
 
 interface CartItem {
-  id: number;
   name: string;
   type: string;
   price: string;
@@ -40,7 +39,6 @@ const SizeQuantityBox= ({ propslug }: any): JSX.Element=> {
 
   function handleAddToCart() {
     const newItem: CartItem = {
-      id: valuesArr.length + 1,
       name: propslug.prodName,
       type: propslug.prodType,
       price: propslug.prodPrice,

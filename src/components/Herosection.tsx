@@ -14,7 +14,7 @@ function Herosection() {
           <p className='w-full md:w-[70%] text-[#666] text-base'>Anyone can beat you but no one can beat your outfit as long as you wear Dine outfits.</p>
           <div>
             <Link href={"/allproducts"}>
-              <Button className='w-[65%] p-4 bg-black text-base flex justify-center items-center rounded-none gap-2 md:w-[35%] md:h-20'>
+              <Button className='w-[65%] p-4 text-base flex justify-center items-center rounded-none gap-2 md:w-[35%] md:h-20'>
                 <div><ShoppingCart className='h-6'/></div>
                 <div className=' flex flex-row gap-x-2 md:flex-col font-bold'><div>Start</div><div> Shopping</div></div>
               </Button>

@@ -19,16 +19,18 @@ function NotEmptyCart() {
   function increaseCount() {
     setCount(count + 1);
   }
-
+  console.log(valuesArr,"FROM CART NOT EMPTY");
+ 
+  
   return (
     <div className=" py-8">
       <div className="w-[100%]">
-        {valuesArr.map((arr:any )=>(
-          <Card key={arr.id}>
+        {valuesArr.map((valueArr:any,idx:number )=>(
+          <Card key={idx}>
             <div className="flex flex-col md:flex-row">
               <div className="flex flex-col md:flex-row w-[100%] md:w-[70%]">
               <Image
-                src={arr.prodImage}
+                src={valueArr.prodImage}
                 alt="Image"
                 width={150}
                 height={200}
@@ -38,7 +40,7 @@ function NotEmptyCart() {
                 <div className=" w-full flex flex-col-reverse gap-2 md:gap-0 md:flex-row md:justify-between ">
                   <p className="text-xl text-[#212121] font-light">
                     {/* Brushed Raglan Sweatshirt */}
-                    {arr.prodName}
+                    {valueArr.prodName}
                   </p>
                   <Trash2  className="my-0 mx-auto md:mx-0"/>
                 </div>

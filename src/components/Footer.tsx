@@ -15,21 +15,21 @@ function Footer() {
             />
             <p className='text-justify py-10 md:pe-4 lg:pe-16'>Small, artisan label that offers a thoughtfully curated collection of high quality everyday essentials made.</p>
             <div className='flex items-center gap-5'>
-                <div className='flex justify-center items-center bg-slate-100  w-10 h-10 rounded cursor-pointer'> 
+                <div className='flex justify-center items-center bg-slate-100 dark:bg-slate-950  w-10 h-10 rounded cursor-pointer'> 
                     {/* <Linkedin /> */}
                     <Twitter size={23} />
                 </div>
-                <div className='flex justify-center items-center bg-slate-100  w-10 h-10 rounded cursor-pointer'>
+                <div className='flex justify-center items-center bg-slate-100 dark:bg-slate-950 w-10 h-10 rounded cursor-pointer'>
                     <Facebook size={23}/>
                 </div>
-                <div className='flex justify-center items-center bg-slate-100  w-10 h-10 rounded cursor-pointer'>
+                <div className='flex justify-center items-center bg-slate-100  dark:bg-slate-950 w-10 h-10 rounded cursor-pointer'>
                     <Linkedin size={23} />    
                 </div>    
             </div> 
         </div>
         <div className=''>
-            <h2 className='font-bold pb-3 text-xl text-slate-900 cursor-pointer'>Company</h2>
-            <p className='leading-9 text-slate-700 cursor-pointer'>About</p>
+            <h2 className='font-bold pb-3 text-xl  cursor-pointer'>Company</h2>
+            <p className='leading-9 font-light cursor-pointer'>About</p>
             <p className='leading-9 font-light cursor-pointer'>Terms of Use</p>
             <p className='leading-9 font-light cursor-pointer'>Privacy Policy</p>
             <p className='leading-9 font-light tracking-wider cursor-pointer'>How it Works</p>
