@@ -1,9 +1,11 @@
 "use client";
-import React, { useState, createContext, useContext, Dispatch, SetStateAction } from 'react';
+import React, { useState, useContext } from 'react';
 import { ShoppingCart } from 'lucide-react';
 import { Button } from './ui/button';
 import toast, { Toaster } from 'react-hot-toast';
-import { ArrContext } from '@/utils/Arrcontext';
+import { addproduct } from '@/utils/productSlice';
+import { useAppDispatch } from '@/utils/constants';
+
 
 // Define the types for the product and cart item
 // interface Product {
@@ -21,9 +23,9 @@ interface CartItem {
   productImage:any;
 }
 
-
 const SizeQuantityBox= ({ propslug }: any): JSX.Element=> {
-  const { valuesArr, setValuesArr } = useContext(ArrContext);
+  const dispatch=useAppDispatch();
+  // const { valuesArr, setValuesArr } = useContext(ArrContext);
   const [size, setSize] = useState<string>('');
   const [count, setCount] = useState<number>(1);
 
@@ -47,7 +49,9 @@ const SizeQuantityBox= ({ propslug }: any): JSX.Element=> {
       productImage:propslug.prodImage    
     };
 
-    setValuesArr([...valuesArr, newItem]);
+    dispatch(addproduct(newItem));
+    // console.log(newItem + " new item added");
+    console.log(`${newItem.name} new item added`, newItem);
     toast.success(`${count} ${propslug.prodName} of size ${size} added to the Cart!`);
   }
 

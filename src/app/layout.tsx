@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Footer1 from "@/components/Footer1";
 import Navbar from "@/components/Header1";
-import { ArrProvider } from "@/utils/Arrcontext";
 import { ThemeProvider } from "@/components/theme-provider"
+import StoreProvider from "./StoreProvider";
 
 const inter = Sora({ subsets: ["latin"] });
 
@@ -20,7 +19,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const valuesArr=[];  
+    
   return (
     <html lang="en">
       <body className={`${inter.className}  `}>
@@ -29,15 +28,15 @@ export default function RootLayout({
               defaultTheme="system"
               enableSystem
               disableTransitionOnChange
-            >
-          <ArrProvider>
+            >    
+            <StoreProvider>
           <div className="box-border">
             <Navbar />
             {children}
             <Footer />
           </div>
           <Footer1 />
-          </ArrProvider>
+          </StoreProvider>
         </ThemeProvider>
       </body>
     </html>

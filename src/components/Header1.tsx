@@ -7,11 +7,14 @@ import { APP_LINKS } from '@/utils/constants';
 import { Input } from "@/components/ui/input";
 import { Search,ShoppingCart } from 'lucide-react';
 import { ArrContext } from '@/utils/Arrcontext';
+import { useAppSelector } from "@/utils/constants";
 import {ModeToggle} from '@/components/ToggleButton'
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const {valuesArr}=useContext(ArrContext);
+  const valuesArr = useAppSelector((state:any)=> state.productarr)
+  // const {valuesArr}=useContext(ArrContext);
+
   // const arr=useContext(CreateArrayContext) 
   
   // const [productCount, setProductCount] = useState(0);
